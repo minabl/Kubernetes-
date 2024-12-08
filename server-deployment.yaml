@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mern-server-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mern-server
+  template:
+    metadata:
+      labels:
+        app: mern-server
+    spec:
+      containers:
+      - name: mern-server
+        image: minabf/mern-server:latest
+        ports:
+        - containerPort: 5000
+        env:
+          - name: MONGO_URI
+            value: "mongodb://mongodb:27017/employees"
