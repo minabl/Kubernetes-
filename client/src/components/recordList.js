@@ -24,7 +24,8 @@ const Record = (props) => {
 
 export default function RecordList() {
     const [records, setRecords] = useState([])
-    const apiUrl = process.env.REACT_APP_API_URL;
+    const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5000";
+
     useEffect(() => {
         async function getRecords() {
             const response = await fetch(`${apiUrl}/record/`)

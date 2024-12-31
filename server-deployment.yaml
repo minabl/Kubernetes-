@@ -19,4 +19,8 @@ spec:
         - containerPort: 5000
         env:
           - name: MONGO_URI
-            value: "mongodb://mongodb:27017/employees"
+            valueFrom:
+              configMapKeyRef:
+                name: mern-config
+                key: MONGO_URI
+              

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mern-config
+data:
+  REACT_APP_API_URL: "http://127.0.0.1:5000"
+  MONGO_URI: "mongodb://mongo-service:27017/mern-app"

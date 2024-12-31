@@ -12,7 +12,7 @@ module.exports = {
     try {
       // Connect to the MongoDB server
       await client.connect();
-      _db = client.db("employees");  // Connect to the "employees" database
+      _db = client.db("mern-app");  // Connect to the "employees" database
       console.log("Successfully connected to MongoDB.");
     } catch (error) {
       console.error("Error connecting to MongoDB:", error);

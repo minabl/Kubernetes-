@@ -8,4 +8,5 @@ spec:
   ports:
     - protocol: TCP
       port: 5000
-  type: NodePort
+      targetPort: 5000 # Port sur lequel le conteneur écoute à l'intérieur du pod
+  type: LoadBalancer

@@ -14,10 +14,13 @@ spec:
     spec:
       containers:
       - name: mern-client
-        image: minabf/mern-client:latest
+        image: minabf/mern-client:v2
         ports:
         - containerPort: 3000
         env:
         - name: REACT_APP_API_URL
-          value: "http://localhost:5000"
+          valueFrom:
+            configMapKeyRef:
+              name: mern-config
+              key: REACT_APP_API_URL
           
