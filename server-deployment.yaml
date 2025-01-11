@@ -20,7 +20,7 @@ spec:
         env:
           - name: MONGO_URI
             valueFrom:
-              configMapKeyRef:
-                name: mern-config
+              secretKeyRef:
+                name: mongo-uri-secret
                 key: MONGO_URI
               
